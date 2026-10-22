@@ -6,14 +6,15 @@ import neopixel
 
 # 16x16 Matrix = 256 Pixel (Pin und Anzahl anpassen)
 NUM_PIXELS = 256
-pixels = neopixel.NeoPixel(board.GP6, NUM_PIXELS, brightness=0.3, auto_write=False)
+pixels = neopixel.NeoPixel(board.D10, NUM_PIXELS, brightness=0.1, auto_write=False)
 
-# Joystick-Pins für CircuitPython definieren (Beispiel GPIOs)
+# Joystick-Pins für CircuitPython definieren
+# Mapping gemäss Lektion 2 Hardware-Aufbau: Oben=D4, Unten=D5, Links=D0, Rechts=D1
 joystick_pins = {
-    "Up": board.GP2,
-    "Down": board.GP3,
-    "Left": board.GP4,
-    "Right": board.GP5
+    "Up": board.D4,
+    "Down": board.D5,
+    "Left": board.D0,
+    "Right": board.D1
 }
 
 js_inputs = {}
