@@ -4,12 +4,11 @@ import board
 import digitalio
 import neopixel
 
-# 16x16 Matrix = 256 Pixel (Pin und Anzahl anpassen)
+# 16x16 Matrix = 256 Pixel
 NUM_PIXELS = 256
 pixels = neopixel.NeoPixel(board.D10, NUM_PIXELS, brightness=0.1, auto_write=False)
 
 # Joystick-Pins für CircuitPython definieren
-# Mapping gemäss Lektion 2 Hardware-Aufbau: Oben=D4, Unten=D5, Links=D0, Rechts=D1
 joystick_pins = {
     "Up": board.D4,
     "Down": board.D5,
@@ -46,9 +45,12 @@ last_down = js_inputs["Down"].value
 last_left = js_inputs["Left"].value
 last_right = js_inputs["Right"].value
 
+def hex_to_rgb(hex_str):
+    hex_str = hex_str.lstrip('#')
+    return tuple(int(hex_str[i:i+2], 16) for i in (0, 2, 4))
+
 def setze_pixel(x, y, color):
     if 0 <= x < 16 and 0 <= y < 16:
-        # Lineares Mapping (Bei Serpentinenverkabelung muss hier die Formel angepasst werden)
         index = y * 16 + x
         pixels[index] = color
 
@@ -84,8 +86,7 @@ while images:
     for y, row in enumerate(active_frame):
         for x, char in enumerate(row):
             if char in palette:
-                setze_pixel(x, y, tuple(palette[char]))
+                setze_pixel(x, y, hex_to_rgb(palette[char]))
 
     pixels.show()
     time.sleep(0.05)
-
