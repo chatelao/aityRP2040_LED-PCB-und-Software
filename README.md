@@ -14,6 +14,7 @@ Dieses Projekt bietet ein einfaches 4-LED-Board an, das mit einem Seeed Studio X
 
 1. [Lektion 1: Erste Schritte](./lektion-1/Lektionserläuterung.md)
 2. [Lektion 2: Arcade Controller](./lektion-2/README.md)
+3. [Lektion 5: Halloween Matrix Engine & Animationen](./lektion-5/README.md)
 
 ## Vorbereitung des XIAO RP2040
 
