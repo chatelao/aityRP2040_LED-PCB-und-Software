@@ -2,15 +2,27 @@ import board
 import digitalio
 import time
 
+#      XIAO RP2040 Pinout & Joystick Wiring
+#
+#             +--------------+
+# (Oben)   D0 | [ ]      [ ] | 5V
+# (Unten)  D1 | [ ]      [ ] | GND <--- Common (GND)
+#          D2 | [ ]      [ ] | 3V3
+#          D3 | [ ]      [ ] | D10 (NeoPixel Matrix)
+# (Links)  D4 | [ ]      [ ] | D9
+# (Rechts) D5 | [ ]      [ ] | D8
+#          D6 | [ ]      [ ] | D7
+#             +-----USB------+
+
 # Pin-Konfiguration für den Arcade-Controller
 # Wir verwenden interne Pull-Up Widerstände, daher ist der Wert 'False', wenn gedrückt.
-# Mapping: Oben=D2, Unten=D3, Links=D1, Rechts=D0
+# Mapping laut README: Oben=D0, Unten=D1, Links=D4, Rechts=D5
 
 pins = {
-    "Oben": board.D2,
-    "Unten": board.D3,
-    "Links": board.D1,
-    "Rechts": board.D0
+    "Oben": board.D0,
+    "Unten": board.D1,
+    "Links": board.D4,
+    "Rechts": board.D5
 }
 
 # Initialisierung der Eingabestifte

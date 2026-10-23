@@ -11,10 +11,11 @@ HEIGHT = 16
 pixels = neopixel.NeoPixel(PIXEL_PIN, WIDTH * HEIGHT, brightness=0.1, auto_write=False)
 
 # Eingabe Konfiguration
-up = digitalio.DigitalInOut(board.D2)
-down = digitalio.DigitalInOut(board.D3)
-left = digitalio.DigitalInOut(board.D1)
-right = digitalio.DigitalInOut(board.D0)
+# Mapping laut README: Oben=D0, Unten=D1, Links=D4, Rechts=D5
+up = digitalio.DigitalInOut(board.D0)
+down = digitalio.DigitalInOut(board.D1)
+left = digitalio.DigitalInOut(board.D4)
+right = digitalio.DigitalInOut(board.D5)
 
 for pin in [up, down, left, right]:
     pin.direction = digitalio.Direction.INPUT
