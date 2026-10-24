@@ -33,10 +33,17 @@ while images:
             # Zeige die 4-Frame-Animation zweimal pro Motiv an
             for _ in range(2):
                 for frame in frames:
+                    if isinstance(frame, dict):
+                        grid = frame["grid"]
+                        duration = frame.get("duration", 0.3)
+                    else:
+                        grid = frame
+                        duration = 0.3
+
                     pixels.fill((0, 0, 0))
-                    for y, row in enumerate(frame):
+                    for y, row in enumerate(grid):
                         for x, char in enumerate(row):
                             if char in rgb_palette:
                                 pixels[y * 16 + x] = rgb_palette[char]
                     pixels.show()
-                    time.sleep(0.3)
+                    time.sleep(duration)

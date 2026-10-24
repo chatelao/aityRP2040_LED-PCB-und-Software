@@ -83,7 +83,8 @@ while images:
     pixels.fill((0, 0, 0))
 
     active_frame = frames[current_frame_index]
-    for y, row in enumerate(active_frame):
+    grid = active_frame["grid"] if isinstance(active_frame, dict) else active_frame
+    for y, row in enumerate(grid):
         for x, char in enumerate(row):
             if char in palette:
                 setze_pixel(x, y, hex_to_rgb(palette[char]))

@@ -41,7 +41,16 @@ def render_all(json_path="lektion-5/images.json", output_dir="lektion-5/images")
         frames_raw = img_def["frames"]
 
         rendered_frames = []
-        for frame_idx, frame_data in enumerate(frames_raw, start=1):
+        frame_durations = []
+        for frame_idx, frame_item in enumerate(frames_raw, start=1):
+            if isinstance(frame_item, dict):
+                frame_data = frame_item["grid"]
+                duration_sec = frame_item.get("duration", 0.3)
+            else:
+                frame_data = frame_item
+                duration_sec = 0.3
+
+            frame_durations.append(int(duration_sec * 1000))
             frame_img = render_frame(frame_data, palette)
             rendered_frames.append(frame_img)
             png_filename = f"{idx:02d}_{slug}_frame{frame_idx}.png"
@@ -56,7 +65,7 @@ def render_all(json_path="lektion-5/images.json", output_dir="lektion-5/images")
             gif_path,
             save_all=True,
             append_images=gif_frames[1:],
-            duration=300,
+            duration=frame_durations,
             loop=0
         )
 
