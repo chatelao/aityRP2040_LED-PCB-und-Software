@@ -73,13 +73,13 @@
           ".OOOOOOOOOOOOOO.",
           ".OOOROOOOOOROOO.",
           "OOORYROOOORYROOO",
-          "OORRRRR..RRRRROO",
+          "OORRRRROORRRRROO",
           "OOOOOOORROOOOOOO",
           "OOOOOORYYROOOOOO",
-          "OOROOOOOOOOOOROO",
           "OORRRORRRRORRROO",
+          "OORRRRRRRRRRRROO",
           ".OORRYYYYYYRROO.",
-          ".OOOORRRRRROOOO.",
+          ".OOOOYYYYYYOOOO.",
           "..OOOOOOOOOOOO..",
           "....OOOOOOOO...."
         ],
@@ -88,14 +88,14 @@
           "......EE........",
           "....OOOOOOOO....",
           "..OOOOOOOOOOOO..",
+          ".OOOOOOOOOOOOOO.",
           ".OOOYOOOOOOYOOO.",
           "OOOYWYOOOOYWYOOO",
           "OOYYYYYOOYYYYYOO",
           "OOOOOOOYYOOOOOOO",
           "OOOOOOYWWYOOOOOO",
-          "OOYOOOOOOOOOOYOO",
           "OOYYYOYYYYOYYYOO",
-          ".OOYYWWWWWWYYOO.",
+          "OOYYYYYYYYYYYYOO",
           ".OOYYWWWWWWYYOO.",
           ".OOOOYYYYYYOOOO.",
           "..OOOOOOOOOOOO..",
@@ -814,7 +814,7 @@
         ]
       ]
     },
- {
+    {
       "id": 11,
       "name": "Bloodshot Eyeball",
       "animation": "Darting Pupil Left & Right",
