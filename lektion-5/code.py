@@ -6,6 +6,7 @@ import neopixel
 
 # 16x16 Matrix = 256 Pixel
 NUM_PIXELS = 256
+DURATION_SCALE = 1.0  # Skalierungsfaktor für die Anzeigedauer
 pixels = neopixel.NeoPixel(board.D10, NUM_PIXELS, brightness=0.1, auto_write=False)
 
 # JSON-Daten laden
@@ -46,4 +47,4 @@ while images:
                             if char in rgb_palette:
                                 pixels[y * 16 + x] = rgb_palette[char]
                     pixels.show()
-                    time.sleep(duration)
+                    time.sleep(duration * DURATION_SCALE)

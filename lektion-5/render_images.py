@@ -24,7 +24,9 @@ def render_frame(frame_data, palette):
             draw.rectangle(box, fill=color)
     return img
 
-def render_all(json_path="lektion-5/images.json", output_dir="lektion-5/images"):
+DURATION_SCALE = 1.0  # Skalierungsfaktor für die Anzeigedauer
+
+def render_all(json_path="lektion-5/images.json", output_dir="lektion-5/images", duration_scale=DURATION_SCALE):
     os.makedirs(output_dir, exist_ok=True)
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -50,7 +52,7 @@ def render_all(json_path="lektion-5/images.json", output_dir="lektion-5/images")
                 frame_data = frame_item
                 duration_sec = 0.3
 
-            frame_durations.append(int(duration_sec * 1000))
+            frame_durations.append(int(duration_sec * duration_scale * 1000))
             frame_img = render_frame(frame_data, palette)
             rendered_frames.append(frame_img)
             png_filename = f"{idx:02d}_{slug}_frame{frame_idx}.png"
