@@ -20,15 +20,7 @@ rgb_palette = {
 }
 
 images = data["images"]
-
-# Thematisch passende Bild-Dreiergruppen (Triples nach Index 0-15) definieren
-triples = [
-    (0, 6, 8),    # Jack-o'-Lantern, Candy Corn, Bubbling Cauldron
-    (1, 2, 11),   # Classic Ghost, Skull, RIP Tombstone
-    (3, 12, 15),  # Vampire Bat, Vampire, Crescent Moon
-    (4, 5, 14),   # Black Cat, Witch Hat, Witch's Broom
-    (7, 10, 13)   # Frankenstein, Bloodshot Eyeball, Mummy
-]
+triples = data["triples"]
 
 while images:
     # Wähle ein zufälliges Motiv-Triple aus

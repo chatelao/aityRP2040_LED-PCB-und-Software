@@ -4,7 +4,7 @@ Willkommen zu Lektion 5! In dieser Lektion wird die 16x16 NeoPixel LED-Matrix zu
 
 ## Übersicht der Dateien
 
-- **`images.json`**: Enthält die Farbpalette sowie alle 32 Motive mit jeweils 4 Animationsframes im ASCII-Art-Raster-Format (16x16).
+- **`images.json`**: Enthält die Farbpalette, die thematisch passenden Motiv-Dreiergruppen (`triples`) sowie alle 32 Motive mit jeweils 4 Animationsframes im ASCII-Art-Raster-Format (16x16).
 - **`code.py`**: Automatische Wiedergabe-Engine. Das Skript lädt `images.json` und spielt thematisch passende Motiv-Gruppen in einer Endlosschleife auf der LED-Matrix ab.
 - **`code.joystick.py`**: Interaktive Steuerung. Erlaubt das Wechseln zwischen Motiven und einzelnen Frames über den angeschlossenen Arcade Joystick.
 - **`pixel.py`**: Beispielsammeldatei für Koordinaten- und Positionslogik von Pixel-Objekten.
